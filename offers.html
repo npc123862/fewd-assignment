@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers & Subscriptions | Bean Boutique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="sticky-top shadow-sm theme-surface">
+
+        <div class="container-fluid d-flex align-items-center py-2">
+            <button class="navbar-toggler d-lg-none me-3 border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars fs-3 text-body"></i>
+            </button>
+
+            <a class="navbar-brand d-flex align-items-center me-4" href="index.html"><img src="assets/images/shop-logo.png" alt="Bean Boutique Logo" class="shop-logo" width="90" height="90"></a>
+
+            <form class="d-none d-lg-flex w-50 mx-auto" role="search" onsubmit="return false;">
+                <div class="input-group">
+                    <input id="mainSearchInput" class="form-control" type="search" placeholder="Search offers..." aria-label="Search"><button class="btn btn-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+
+            <div class="navbar-nav flex-row align-items-center ms-auto">
+                <a href="#mobileSearchContainer" class="nav-link text-body me-3 d-lg-none" aria-label="Mobile Search">
+                    <i class="fa-solid fa-magnifying-glass fs-4"></i>
+                </a>
+                <a href="#" class="nav-link text-body me-3" data-bs-toggle="modal" data-bs-target="#accountModal">
+                    <div class="d-flex flex-column lh-1 text-start">
+                        <small class="text-muted greeting-text">Hello, Guest</small>
+                        <span class="fw-bold d-none d-sm-inline">Account</span>
+                    </div>
+                </a>
+                <a href="cart.html" class="nav-link text-body position-relative pe-3 me-3" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-cart-shopping fs-4"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">0</span>
+                </a>
+            </div>
+        </div>
+
+        <nav aria-label="Main site navigation">
+            <div class="border-top bg-dark d-none d-lg-block">
+                <ul class="container-fluid d-flex justify-content-center gap-4 list-unstyled mb-0">
+                    <li><a class="text-white text-decoration-none fw-bold header-link" href="coffee.html">Coffee Selection</a></li>
+                    <li><a class="text-white text-decoration-none fw-bold header-link" href="equipment.html">Brewing Equipment</a></li>
+                    <li><a class="text-white text-decoration-none fw-bold header-link" href="events.html">Events</a></li>
+                    <li><a class="text-warning text-decoration-none fw-bold header-link" href="offers.html">Offers</a></li>
+                </ul>
+            </div>
+            <div class="collapse d-lg-none theme-surface border-top shadow-sm" id="mobileNav">
+                <ul class="container-fluid py-2 d-flex flex-column text-center list-unstyled mb-0">
+                    <li><a class="text-body text-decoration-none fw-bold py-3 border-bottom d-block" href="coffee.html">Coffee Selection</a></li>
+                    <li><a class="text-body text-decoration-none fw-bold py-3 border-bottom d-block" href="equipment.html">Brewing Equipment</a></li>
+                    <li><a class="text-body text-decoration-none fw-bold py-3 border-bottom d-block" href="events.html">Events</a></li>
+                    <li><a class="text-warning text-decoration-none fw-bold py-3 d-block" href="offers.html">Offers</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow-1 container my-5">
+        <div class="text-center mb-3">
+            <h1 class="display-5 fw-bold mb-3">Subscriptions & Offers</h1>
+            <p class="text-muted mb-4">Never run out of fresh beans. Save money and time with our curated plans.</p>
+
+            <div class="d-block d-lg-none px-3" id="mobileSearchContainer">
+                <div class="input-group shadow-sm">
+                    <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+                    <input type="text" class="form-control border-start-0" placeholder="Search offers...">
+                </div>
+            </div>
+        </div>
+
+        <section aria-labelledby="pricing-heading" class="mb-5">
+            <h2 id="pricing-heading" class="visually-hidden">Subscription Tiers</h2>
+
+            <div class="row row-cols-1 row-cols-md-3 mb-5 text-center g-4">
+
+                <article class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm h-100 border-0 subscription-card">
+                        <div class="card-header py-3 bg-transparent border-bottom-0">
+                            <h3 class="my-0 fw-normal h4">Explorer</h3>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title pricing-card-title display-6 fw-bold">€15<small class="text-muted fw-light fs-6">/mo</small></h4>
+                            <ul class="list-unstyled mt-3 mb-4 text-start mx-auto">
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>1 Bag of single origin</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Standard delivery</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Tasting notes card</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-dark mt-auto rounded-pill" data-bs-toggle="modal" data-bs-target="#authModal">Subscribe</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col">
+                    <div class="card mb-4 rounded-3 shadow border-warning h-100 position-relative subscription-card">
+                        <div class="card-header py-3 bg-transparent border-warning">
+                            <span class="badge rounded-pill bg-warning text-dark px-3 py-2 mb-2 d-inline-block">Most Popular</span>
+                            <h3 class="my-0 fw-bold h4">Enthusiast</h3>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title pricing-card-title display-6 fw-bold">€28<small class="text-muted fw-light fs-6">/mo</small></h4>
+                            <ul class="list-unstyled mt-3 mb-4 text-start mx-auto">
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>2 Bags of single origin</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Free priority delivery</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Early access to new roasts</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>10% off brewing equipment</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-warning text-dark fw-bold mt-auto rounded-pill" data-bs-toggle="modal" data-bs-target="#authModal">Subscribe</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm h-100 border-0 subscription-card">
+                        <div class="card-header py-3 bg-transparent border-bottom-0">
+                            <h3 class="my-0 fw-normal h4">Aficionado</h3>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title pricing-card-title display-6 fw-bold">€50<small class="text-muted fw-light fs-6">/mo</small></h4>
+                            <ul class="list-unstyled mt-3 mb-4 text-start mx-auto">
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>4 Bags of premium origin</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Free priority delivery</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Exclusive micro-lot access</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Free annual barista workshop</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-dark mt-auto rounded-pill" data-bs-toggle="modal" data-bs-target="#authModal">Subscribe</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="promotions-heading" class="mb-5">
+            <h2 id="promotions-heading" class="h4 fw-bold mb-4 border-bottom pb-2">Current Promotions</h2>
+            <div class="row justify-content-center">
+                <article class="col-md-8 col-lg-6">
+                    <div class="d-flex align-items-center p-4 theme-surface rounded-3 shadow-sm border-start border-warning border-4">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-tags fa-2x text-body"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h4 class="h6 fw-bold mb-1">First Subscription Discount</h4>
+                            <p class="mb-1 text-muted small">Subscribe today for regular deliveries and save 15% on your first month's subscription box.</p>
+                            <span class="badge border text-body font-monospace">CODE: SUB15</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <header class="modal-header bg-dark text-white border-0">
+                    <h5 class="modal-title fw-bold" id="authModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning"></i>Account Sign-In</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </header>
+                <div class="modal-body p-4 theme-surface text-center">
+                    <h3 class="fw-bold mb-3">Almost there!</h3>
+                    <p class="text-muted mb-4">How would you like to proceed with your subscription?</p>
+
+                    <div class="d-grid gap-3">
+                        <button class="btn btn-warning text-dark fw-bold py-2 rounded-pill" id="loginBtn">Log In</button>
+                        <button class="btn btn-outline-dark fw-bold py-2 rounded-pill" id="registerBtn">Create an Account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center w-100 py-4">
+        <a href="#" class="back-to-top-link text-decoration-none">
+            <div class="text">
+                <span>Back</span>
+                <span>to</span>
+                <span>top</span>
+            </div>
+            <div class="clone">
+                <span>Back</span>
+                <span>to</span>
+                <span>top</span>
+            </div>
+            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="20px">
+                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+            </svg>
+        </a>
+    </div>
+
+    <footer class="mt-auto">
+        <div class="bg-dark text-white pt-5 pb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-md-start">
+                        <h2 class="h6 fw-bold text-warning mb-3 text-uppercase tracking-wide">Explore Bean Boutique</h2>
+
+                        <ul class="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-start gap-3 gap-md-4 mb-0">
+                            <li><a href="index.html" class="text-white text-decoration-none footer-link">Home</a></li>
+                            <li><a href="coffee.html" class="text-white text-decoration-none footer-link">Coffee Selection</a></li>
+                            <li><a href="equipment.html" class="text-white text-decoration-none footer-link">Brewing Equipment</a></li>
+                            <li><a href="events.html" class="text-white text-decoration-none footer-link">Events & Workshops</a></li>
+                            <li><a href="offers.html" class="text-white text-decoration-none footer-link">Offers & Subscriptions</a></li>
+                            <li><a href="contact.html" class="text-white text-decoration-none footer-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-black text-white py-3">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+                <ul class="social-wrapper mb-3 mb-md-0">
+                    <li class="social-icon facebook">
+                        <span class="social-tooltip">Facebook</span>
+                        <svg viewBox="0 0 320 512" height="1.2em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                        </svg>
+                    </li>
+                    <li class="social-icon x-logo">
+                        <span class="social-tooltip">X</span>
+                        <svg height="1.2em" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+                        </svg>
+                    </li>
+                    <li class="social-icon instagram">
+                        <span class="social-tooltip">Instagram</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                        </svg>
+                    </li>
+                </ul>
+
+                <p class="mb-0 text-center text-md-end text-light small">&copy; 2026 Bean Boutique. All rights reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <button id="a11y-btn" class="btn btn-warning rounded-circle shadow-lg" aria-label="Accessibility Options">
+        <i class="fa-solid fa-universal-access fs-3"></i>
+    </button>
+
+    <div id="a11y-panel" class="card shadow-lg border-0 d-none">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0 fs-6"><i class="fa-solid fa-gear me-2"></i>Accessibility</h5>
+            <button type="button" class="btn-close btn-close-white" id="close-a11y-panel" aria-label="Close panel"></button>
+        </div>
+        <div class="card-body theme-surface">
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch">
+                <label class="form-check-label small fw-bold" for="themeSwitch">Dark Theme</label>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <label class="small fw-bold mb-0">Text Size</label>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Text size controls">
+                    <button type="button" class="btn btn-outline-dark" id="btn-text-decrease" aria-label="Decrease text size"><i class="fa-solid fa-minus"></i></button>
+                    <span class="input-group-text bg-transparent border-dark px-2 text-dark" id="text-size-display" style="font-size: 0.8rem;">100%</span>
+                    <button type="button" class="btn btn-outline-dark" id="btn-text-increase" aria-label="Increase text size"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="highlightLinks">
+                <label class="form-check-label small fw-bold" for="highlightLinks">Highlight Links</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <header class="modal-header bg-dark text-white border-0">
+                    <h5 class="modal-title fw-bold" id="accountModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning"></i>Account Access</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </header>
+                <div class="modal-body p-4 theme-surface text-center">
+                    <h3 class="fw-bold mb-3">Welcome Back!</h3>
+                    <p class="text-muted mb-4">Log in to manage your subscriptions and earn bean points.</p>
+
+                    <div class="d-grid gap-3">
+                        <button class="btn btn-warning text-dark fw-bold py-2 rounded-pill" id="navLoginBtn">Log In</button>
+                        <button class="btn btn-outline-dark fw-bold py-2 rounded-pill" id="navRegisterBtn">Create an Account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
