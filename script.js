@@ -454,20 +454,27 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // --- EVENT REGISTRATION ---
-    const $eventRegistrationForm = $('#eventRegistrationForm');
+  const $eventRegistrationForm = $('#eventRegistrationForm');
 
-    if ($eventRegistrationForm.length > 0) {
-        $eventRegistrationForm.on('submit', function(e) {
-            e.preventDefault();
+  if ($eventRegistrationForm.length > 0) {
+    $eventRegistrationForm.on('submit', function(e) {
+      e.preventDefault();
 
-            const userEmail = $('#emailAddress').val();
-            const selectedEvent = $('#eventSelect option:selected').text();
+      const firstName = $('#firstName').val();
+      const lastName = $('#lastName').val();
+      const userEmail = $('#emailAddress').val();
+      const selectedEvent = $('#eventSelect option:selected').text();
+      const ticketCount = $('#ticketCount').val();
 
-            alert(`Success! You are registered for: ${selectedEvent}.\n\nA confirmation email has been sent to ${userEmail}. We look forward to seeing you there!`);
+      const emailSubject = encodeURIComponent(`Event Registration: ${selectedEvent}`);
+      const emailBody = encodeURIComponent(`Hello Bean Boutique,\n\nI would like to register for an event.\n\nName: ${firstName} ${lastName}\nEmail: ${userEmail}\nEvent: ${selectedEvent}\nTickets: ${ticketCount}\n\nThank you!`);
 
-            this.reset();
-        });
-    }
+      window.location.href = `mailto:hello@beanboutique.com?subject=${emailSubject}&body=${emailBody}`;
+
+      alert(`Opening your email client to complete registration for: ${selectedEvent}.`);
+      this.reset();
+    });
+  }
 
 
   // --- ACCESSIBILITY PANEL ---
