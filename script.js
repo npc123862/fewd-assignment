@@ -290,8 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
               <p class="text-muted small mb-2 mb-sm-0">${item.desc}</p>
             </div>
             <div class="d-flex align-items-center mt-2 mt-sm-0">
-              <input type="number" class="form-control form-control-sm text-center me-3 quantity-input" value="${item.quantity}" min="1" style="width: 60px;">
-              <span class="fw-bold me-4" style="min-width: 60px;">€${itemTotal.toFixed(2)}</span>
+              <input type="number" class="form-control form-control-sm text-center me-3 quantity-input cart-qty-width" value="${item.quantity}" min="1">
+              <span class="fw-bold me-4 cart-price-width">€${itemTotal.toFixed(2)}</span>
               <button class="btn btn-sm btn-outline-danger remove-item" aria-label="Remove item"><i class="fa-solid fa-trash-can"></i></button>
             </div>
           </div>
