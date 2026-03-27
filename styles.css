@@ -361,21 +361,52 @@ a.btn-dark {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 1rem;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    will-change: scroll-position;
+    -webkit-overflow-scrolling: touch;
 }
 
 .product-slider::-webkit-scrollbar {
-    height: 8px;
+    display: none;
 }
 
-.product-slider::-webkit-scrollbar-thumb {
-    background-color: #dee2e6;
-    border-radius: 4px;
+.product-slider.is-scrolling {
+    scroll-snap-type: none !important;
 }
 
 .product-card {
     flex: 0 0 calc(33.333% - 1rem);
     scroll-snap-align: start;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.paddle-btn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.paddle-btn:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.paddle-left {
+    left: -20px;
+}
+
+.paddle-right {
+    right: -20px;
 }
 
 .card-img-wrapper {
@@ -749,4 +780,6 @@ body.highlight-links .navbar-brand {
     .product-card {
         flex: 0 0 85%;
     }
+    .paddle-left { left: 0px; }
+    .paddle-right { right: 0px; }
 }

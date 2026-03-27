@@ -80,6 +80,97 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // --- PADDLE NAVIGATION ---
+  function easeOutCubic(t, b, c, d) {
+    t /= d;
+    t--;
+    return c * (t * t * t + 1) + b;
+  }
+
+  function customSmoothScroll(el, distance, duration) {
+    const startPosition = el.scrollLeft;
+    let startTime = null;
+
+    if (el.scrollAnimationId) cancelAnimationFrame(el.scrollAnimationId);
+    if (el.snapTimeoutId) clearTimeout(el.snapTimeoutId);
+
+    el.isAnimating = true;
+    el.style.setProperty('scroll-snap-type', 'none', 'important');
+
+    el.style.setProperty('pointer-events', 'none', 'important');
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime - 16;
+
+      const timeElapsed = currentTime - startTime;
+
+      const nextPosition = easeOutCubic(timeElapsed, startPosition, distance, duration);
+      el.scrollLeft = nextPosition;
+
+      if (timeElapsed < duration) {
+        el.scrollAnimationId = requestAnimationFrame(animation);
+      } else {
+        el.scrollLeft = startPosition + distance;
+        el.isAnimating = false;
+
+        el.style.removeProperty('pointer-events');
+
+        el.snapTimeoutId = setTimeout(() => {
+          if (!el.isHoveringPaddle) {
+            el.style.removeProperty('scroll-snap-type');
+          }
+        }, 50);
+      }
+    }
+
+    el.scrollAnimationId = requestAnimationFrame(animation);
+  }
+
+  $('.paddle-btn').on('mouseenter', function() {
+    const slider = $(this).siblings('.product-slider')[0];
+    slider.isHoveringPaddle = true;
+
+    slider.cachedClientWidth = slider.clientWidth;
+    slider.cachedScrollWidth = slider.scrollWidth;
+
+    slider.style.setProperty('scroll-snap-type', 'none', 'important');
+  }).on('mouseleave', function() {
+    const slider = $(this).siblings('.product-slider')[0];
+    slider.isHoveringPaddle = false;
+
+    if (!slider.isAnimating) {
+      slider.style.removeProperty('scroll-snap-type');
+    }
+  });
+
+  $('.paddle-right').on('click', function() {
+    const slider = $(this).siblings('.product-slider')[0];
+
+    const cWidth = slider.cachedClientWidth || slider.clientWidth;
+    const sWidth = slider.cachedScrollWidth || slider.scrollWidth;
+    const scrollDistance = cWidth * 0.65;
+
+    if (slider.scrollLeft + cWidth >= sWidth - 10) {
+      customSmoothScroll(slider, -slider.scrollLeft, 2000);
+    } else {
+      customSmoothScroll(slider, scrollDistance, 2000);
+    }
+  });
+
+  $('.paddle-left').on('click', function() {
+    const slider = $(this).siblings('.product-slider')[0];
+
+    const cWidth = slider.cachedClientWidth || slider.clientWidth;
+    const sWidth = slider.cachedScrollWidth || slider.scrollWidth;
+    const scrollDistance = cWidth * 0.65;
+
+    if (slider.scrollLeft <= 0) {
+      customSmoothScroll(slider, sWidth, 2000);
+    } else {
+      customSmoothScroll(slider, -scrollDistance, 2000);
+    }
+  });
+
   // Coffee Selection Search
   function filterCoffees() {
     const searchTerm = $('.page-search-input').val() ? $('.page-search-input').val().toLowerCase() : '';
