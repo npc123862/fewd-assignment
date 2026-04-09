@@ -40,13 +40,13 @@
 
             <form class="d-none d-lg-flex w-50 mx-auto" role="search" onsubmit="return false;">
                 <div class="input-group">
-                    <input id="mainSearchInput" class="form-control" type="search" placeholder="Search offers..." aria-label="Search"><button class="btn btn-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input id="mainSearchInput" class="form-control" type="search" placeholder="Search offers..." aria-label="Search"><button class="btn btn-warning" type="submit" aria-label="Submit Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
                 </div>
             </form>
 
             <div class="navbar-nav flex-row align-items-center ms-auto">
                 <a href="#mobileSearchContainer" class="nav-link text-body me-3 d-lg-none" aria-label="Mobile Search">
-                    <i class="fa-solid fa-magnifying-glass fs-4"></i>
+                    <i class="fa-solid fa-magnifying-glass fs-4" aria-hidden="true"></i>
                 </a>
                 <a href="#" class="nav-link text-body me-3" data-bs-toggle="modal" data-bs-target="#accountModal">
                     <div class="d-flex flex-column lh-1 text-start">
@@ -111,7 +111,7 @@
                                 <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Standard delivery</li>
                                 <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Tasting notes card</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-dark mt-auto rounded-pill" data-bs-toggle="modal" data-bs-target="#authModal">Subscribe</button>
+                            <button class="btn btn-dark text-warning fw-bold w-100 rounded-pill mt-auto" data-bs-toggle="modal" data-bs-target="#authModal" aria-label="Subscribe to the Explorer tier for €15 per month">Subscribe</button>
                         </div>
                     </div>
                 </article>
@@ -130,7 +130,7 @@
                                 <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Early access to new roasts</li>
                                 <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>10% off brewing equipment</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-warning text-dark fw-bold mt-auto rounded-pill" data-bs-toggle="modal" data-bs-target="#authModal">Subscribe</button>
+                            <button class="btn btn-warning text-dark fw-bold w-100 rounded-pill mt-auto" data-bs-toggle="modal" data-bs-target="#authModal" aria-label="Subscribe to the Enthusiast tier for €28 per month">Subscribe</button>
                         </div>
                     </div>
                 </article>
@@ -148,7 +148,7 @@
                                 <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Exclusive micro-lot access</li>
                                 <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Free annual barista workshop</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-dark mt-auto rounded-pill" data-bs-toggle="modal" data-bs-target="#authModal">Subscribe</button>
+                            <button class="btn btn-dark text-warning fw-bold w-100 rounded-pill mt-auto" data-bs-toggle="modal" data-bs-target="#authModal" aria-label="Subscribe to the Aficionado tier for €50 per month">Subscribe</button>
                         </div>
                     </div>
                 </article>
@@ -164,7 +164,7 @@
                             <i class="fa-solid fa-tags fa-2x text-body"></i>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h4 class="h6 fw-bold mb-1">First Subscription Discount</h4>
+                            <h3 class="h6 fw-bold mb-1">First Subscription Discount</h3>
                             <p class="mb-1 text-muted small">Subscribe today for regular deliveries and save 15% on your first month's subscription box.</p>
                             <span class="badge border text-body font-monospace">CODE: SUB15</span>
                         </div>
@@ -174,11 +174,11 @@
         </section>
     </main>
 
-    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg">
                 <header class="modal-header bg-dark text-white border-0">
-                    <h5 class="modal-title fw-bold" id="authModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning"></i>Account Sign-In</h5>
+                    <h2 class="modal-title fw-bold" id="authModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning" aria-hidden="true"></i>Account Sign-In</h2>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </header>
                 <div class="modal-body p-4 theme-surface text-center">
@@ -201,7 +201,7 @@
                 <span>to</span>
                 <span>top</span>
             </div>
-            <div class="clone">
+            <div class="clone" aria-hidden="true">
                 <span>Back</span>
                 <span>to</span>
                 <span>top</span>
@@ -268,7 +268,7 @@
 
     <div id="a11y-panel" class="card shadow-lg border-0 d-none">
         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-            <h5 class="mb-0 fs-6"><i class="fa-solid fa-gear me-2"></i>Accessibility</h5>
+            <h3 class="mb-0 fs-6"><i class="fa-solid fa-gear me-2"></i>Accessibility</h3>
             <button type="button" class="btn-close btn-close-white" id="close-a11y-panel" aria-label="Close panel"></button>
         </div>
         <div class="card-body theme-surface">
@@ -291,11 +291,11 @@
         </div>
     </div>
 
-    <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+    <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg">
                 <header class="modal-header bg-dark text-white border-0">
-                    <h5 class="modal-title fw-bold" id="accountModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning"></i>Account Access</h5>
+                    <h2 class="modal-title fw-bold" id="accountModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning"></i>Account Access</h2>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </header>
                 <div class="modal-body p-4 theme-surface text-center">

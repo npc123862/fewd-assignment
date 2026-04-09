@@ -10,11 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
 </head>
 <body class="d-flex flex-column min-vh-100">
     <div id="preloader-wrapper">
@@ -39,15 +39,15 @@
 
             <form class="d-none d-lg-flex w-50 mx-auto" role="search" onsubmit="return false;">
                 <div class="input-group">
-                    <input id="mainSearchInput" class="form-control event-search-input" type="search" placeholder="Search events..." aria-label="Search"><button class="btn btn-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input id="mainSearchInput" class="form-control event-search-input" type="search" placeholder="Search events..." aria-label="Search"><button class="btn btn-warning" type="submit" aria-label="Submit Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
                 </div>
             </form>
 
             <div class="navbar-nav flex-row align-items-center ms-auto">
                 <a href="#mobileSearchContainer" class="nav-link text-body me-3 d-lg-none" aria-label="Mobile Search">
-                    <i class="fa-solid fa-magnifying-glass fs-4"></i>
+                    <i class="fa-solid fa-magnifying-glass fs-4" aria-hidden="true"></i>
                 </a>
-                <a href="#" class="nav-link text-body me-3">
+                <a href="#" class="nav-link text-body me-3" data-bs-toggle="modal" data-bs-target="#accountModal">
                     <div class="d-flex flex-column lh-1 text-start">
                         <small class="text-muted greeting-text">Hello, Guest</small>
                         <span class="fw-bold d-none d-sm-inline">Account</span>
@@ -106,9 +106,9 @@
                                 <span class="badge bg-warning text-dark me-1"><i class="fa-regular fa-calendar me-1"></i> Mar 10</span>
                                 <span class="badge border text-body"><i class="fa-regular fa-clock me-1"></i> 10:00 AM</span>
                             </div>
-                            <h4 class="card-title h6 fw-bold">Introduction to Cupping</h4>
+                            <h3 class="card-title h6 fw-bold">Introduction to Cupping</h3>
                             <p class="card-text text-muted small mb-3">Learn the industry standard for tasting and evaluating different coffee origins.</p>
-                            <a href="#register" class="btn btn-sm btn-outline-dark fw-bold mt-auto align-self-start">Book Seat</a>
+                            <a href="#register" class="btn btn-sm btn-outline-dark fw-bold mt-auto align-self-start" aria-label="Book a seat for Introduction to Cupping">Book Seat</a>
                         </div>
                     </div>
                 </article>
@@ -121,9 +121,9 @@
                                 <span class="badge bg-warning text-dark me-1"><i class="fa-regular fa-calendar me-1"></i> Mar 15</span>
                                 <span class="badge border text-body"><i class="fa-regular fa-clock me-1"></i> 2:00 PM</span>
                             </div>
-                            <h4 class="card-title h6 fw-bold">Home Brewing Masterclass</h4>
+                            <h3 class="card-title h6 fw-bold">Home Brewing Masterclass</h3>
                             <p class="card-text text-muted small mb-3">Master the V60 and French Press to elevate your daily morning coffee routine.</p>
-                            <a href="#register" class="btn btn-sm btn-outline-dark fw-bold mt-auto align-self-start">Book Seat</a>
+                            <a href="#register" class="btn btn-sm btn-outline-dark fw-bold mt-auto align-self-start" aria-label="Book a seat for Home Brewing Masterclass">Book Seat</a>
                         </div>
                     </div>
                 </article>
@@ -136,9 +136,9 @@
                                 <span class="badge bg-warning text-dark me-1"><i class="fa-regular fa-calendar me-1"></i> Mar 15</span>
                                 <span class="badge border text-body"><i class="fa-regular fa-clock me-1"></i> 2:00 PM</span>
                             </div>
-                            <h4 class="card-title h6 fw-bold">Latte Art Workshop</h4>
+                            <h3 class="card-title h6 fw-bold">Latte Art Workshop</h3>
                             <p class="card-text text-muted small mb-3">Learn the art of creating beautiful latte art with our expert baristas.</p>
-                            <a href="#register" class="btn btn-sm btn-outline-dark fw-bold mt-auto align-self-start">Book Seat</a>
+                            <a href="#register" class="btn btn-sm btn-outline-dark fw-bold mt-auto align-self-start" aria-label="Book a seat for Latte Art Workshop">Book Seat</a>
                         </div>
                     </div>
                 </article>
@@ -153,9 +153,9 @@
                                 <span class="badge bg-warning text-dark me-1"><i class="fa-regular fa-calendar me-1"></i> Apr 5</span>
                                 <span class="badge border text-body"><i class="fa-regular fa-clock me-1"></i> 6:30 PM</span>
                             </div>
-                            <h4 class="card-title h6 fw-bold">Meet the Roaster</h4>
+                            <h3 class="card-title h6 fw-bold">Meet the Roaster</h3>
                             <p class="card-text text-muted small mb-3">An evening talk detailing our bean sourcing process and roasting techniques.</p>
-                            <a href="#register" class="btn btn-sm btn-outline-dark fw-bold mt-auto align-self-start">Book Seat</a>
+                            <a href="#register" class="btn btn-sm btn-outline-dark fw-bold mt-auto align-self-start" aria-label="Book a seat for Meet the Roaster">Book Seat</a>
                         </div>
                     </div>
                 </article>
@@ -221,7 +221,7 @@
                 <span>to</span>
                 <span>top</span>
             </div>
-            <div class="clone">
+            <div class="clone" aria-hidden="true">
                 <span>Back</span>
                 <span>to</span>
                 <span>top</span>
@@ -288,7 +288,7 @@
 
     <div id="a11y-panel" class="card shadow-lg border-0 d-none">
         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-            <h5 class="mb-0 fs-6"><i class="fa-solid fa-gear me-2"></i>Accessibility</h5>
+            <h3 class="mb-0 fs-6"><i class="fa-solid fa-gear me-2"></i>Accessibility</h3>
             <button type="button" class="btn-close btn-close-white" id="close-a11y-panel" aria-label="Close panel"></button>
         </div>
         <div class="card-body theme-surface">
@@ -307,6 +307,26 @@
             <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="highlightLinks">
                 <label class="form-check-label small fw-bold" for="highlightLinks">Highlight Links</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <header class="modal-header bg-dark text-white border-0">
+                    <h2 class="modal-title fw-bold" id="accountModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning" aria-hidden="true"></i>Account Access</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </header>
+                <div class="modal-body p-4 theme-surface text-center">
+                    <h3 class="fw-bold mb-3">Welcome Back!</h3>
+                    <p class="text-muted mb-4">Log in to manage your subscriptions and earn bean points.</p>
+
+                    <div class="d-grid gap-3">
+                        <button class="btn btn-warning text-dark fw-bold py-2 rounded-pill" id="navLoginBtn">Log In</button>
+                        <button class="btn btn-outline-dark fw-bold py-2 rounded-pill" id="navRegisterBtn">Create an Account</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

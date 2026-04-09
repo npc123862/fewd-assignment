@@ -39,7 +39,7 @@
 
             <form class="d-none d-lg-flex w-50 mx-auto" role="search" onsubmit="return false;">
                 <div class="input-group">
-                    <input id="mainSearchInput" class="form-control" type="search" placeholder="Search the store..." aria-label="Search"><button class="btn btn-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input id="mainSearchInput" class="form-control" type="search" placeholder="Search the store..." aria-label="Search"><button class="btn btn-warning" type="submit" aria-label="Submit Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
                 </div>
             </form>
 
@@ -54,8 +54,8 @@
                     </div>
                 </a>
                 <a href="cart.html" class="nav-link text-body position-relative pe-3 me-3" aria-label="Shopping Cart">
-                    <i class="fa-solid fa-cart-shopping fs-4 text-warning"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark text-white">0</span>
+                    <i class="fa-solid fa-cart-shopping fs-4"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">0</span>
                 </a>
             </div>
         </div>
@@ -103,11 +103,10 @@
                 <section aria-labelledby="cart-items-heading">
                     <h3 id="cart-items-heading" class="visually-hidden">Items in your cart</h3>
 
-                    <div id="cartItemsContainer">
-                        </div>
+                    <div id="cartItemsContainer"></div>
 
                     <div class="d-flex justify-content-between mt-4">
-                        <a href="coffee.html" class="text-decoration-none text-dark fw-bold"><i class="fa-solid fa-arrow-left me-2"></i>Continue Shopping</a>
+                        <a href="coffee.html" class="text-decoration-none text-dark fw-bold"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>Continue Shopping</a>
                         <button id="clearCartBtn" class="btn btn-outline-danger btn-sm d-none">Clear Cart</button>
                     </div>
                 </section>
@@ -118,7 +117,7 @@
                     <h3 id="summary-heading" class="h5 fw-bold mb-4 border-bottom pb-3">Order Summary</h3>
 
                     <div class="input-group mb-4">
-                        <input type="text" class="form-control" id="promoCodeInput" placeholder="Promo code">
+                        <input type="text" class="form-control" id="promoCodeInput" placeholder="Promo code" aria-label="Enter promo code">
                         <button class="btn btn-dark" id="applyPromoBtn">Apply</button>
                     </div>
 
@@ -144,20 +143,20 @@
                     <button class="btn btn-warning text-dark fw-bold w-100 py-3" id="checkoutBtn">Proceed to Checkout</button>
 
                     <div class="text-center mt-3">
-                        <i class="fa-brands fa-cc-visa fs-3 me-2 text-muted"></i>
-                        <i class="fa-brands fa-cc-mastercard fs-3 me-2 text-muted"></i>
-                        <i class="fa-brands fa-cc-paypal fs-3 text-muted"></i>
+                        <i class="fa-brands fa-cc-visa fs-3 me-2 text-muted" aria-hidden="true"></i>
+                        <i class="fa-brands fa-cc-mastercard fs-3 me-2 text-muted" aria-hidden="true"></i>
+                        <i class="fa-brands fa-cc-paypal fs-3 text-muted" aria-hidden="true"></i>
                     </div>
                 </section>
             </div>
         </div>
     </main>
 
-    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg">
                 <header class="modal-header bg-dark text-white border-0">
-                    <h5 class="modal-title fw-bold" id="authModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning"></i>Checkout Options</h5>
+                    <h2 class="modal-title fw-bold" id="authModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning" aria-hidden="true"></i>Checkout Options</h2>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </header>
                 <div class="modal-body p-4 theme-surface text-center">
@@ -187,7 +186,7 @@
                 <span>to</span>
                 <span>top</span>
             </div>
-            <div class="clone">
+            <div class="clone" aria-hidden="true">
                 <span>Back</span>
                 <span>to</span>
                 <span>top</span>
@@ -254,7 +253,7 @@
 
     <div id="a11y-panel" class="card shadow-lg border-0 d-none">
         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-            <h5 class="mb-0 fs-6"><i class="fa-solid fa-gear me-2"></i>Accessibility</h5>
+            <h3 class="mb-0 fs-6"><i class="fa-solid fa-gear me-2"></i>Accessibility</h3>
             <button type="button" class="btn-close btn-close-white" id="close-a11y-panel" aria-label="Close panel"></button>
         </div>
         <div class="card-body theme-surface">
@@ -277,11 +276,11 @@
         </div>
     </div>
 
-    <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+    <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg">
                 <header class="modal-header bg-dark text-white border-0">
-                    <h5 class="modal-title fw-bold" id="accountModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning"></i>Account Access</h5>
+                    <h2 class="modal-title fw-bold" id="accountModalLabel"><i class="fa-solid fa-circle-user me-2 text-warning" aria-hidden="true"></i>Account Sign-In</h2>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </header>
                 <div class="modal-body p-4 theme-surface text-center">

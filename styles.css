@@ -29,6 +29,10 @@
     font-size: 0.8rem;
 }
 
+body {
+    scrollbar-gutter: stable;
+}
+
 body, .theme-surface, .card {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     font-family: 'Nunito', sans-serif;
@@ -782,4 +786,26 @@ body.highlight-links .navbar-brand {
     }
     .paddle-left { left: 0px; }
     .paddle-right { right: 0px; }
+}
+
+@media (max-width: 576px) {
+    #a11y-btn { top: auto; bottom: 20px; right: 15px; }
+}
+
+@media (max-width: 576px) {
+    .carousel-img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-toast-container {
+        top: 50%;
+        left: 50%;
+        bottom: auto;
+        right: auto;
+        transform: translate(-50%, -50%);
+        width: 85%;
+        z-index: 1060;
+    }
 }

@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cart.length === 0) {
       $cartContainer.html(`
         <div class="text-center py-5 theme-surface rounded shadow-sm border-0 mb-4">
-          <i class="fa-solid fa-basket-shopping fa-3x text-muted mb-3"></i>
+          <i class="fa-solid fa-basket-shopping fa-3x text-muted mb-3" aria-hidden="true"></i>
           <h4 class="text-muted">Your cart is empty</h4>
           <p class="text-muted small">Looks like you haven't added any coffee yet!</p>
           <a href="coffee.html" class="btn btn-warning mt-2 fw-bold">Start Shopping</a>
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="d-flex align-items-center mt-2 mt-sm-0">
               <input type="number" class="form-control form-control-sm text-center me-3 quantity-input cart-qty-width" value="${item.quantity}" min="1">
               <span class="fw-bold me-4 cart-price-width">€${itemTotal.toFixed(2)}</span>
-              <button class="btn btn-sm btn-outline-danger remove-item" aria-label="Remove item"><i class="fa-solid fa-trash-can"></i></button>
+              <button class="btn btn-sm btn-outline-danger remove-item" aria-label="Remove ${item.name} from cart"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button>
             </div>
           </div>
         </article>
